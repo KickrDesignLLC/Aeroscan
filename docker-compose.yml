@@ -1,0 +1,6 @@
+version: "2"
+
+services:
+  Aeroscan:
+    build: .
+    privileged: true
