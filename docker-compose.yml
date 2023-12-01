@@ -4,3 +4,13 @@ services:
   Aeroscan:
     build: .
     privileged: true
+  bluetooth:
+    image: bh.cr/balenalabs/bluetooth-aarch64
+    network_mode: host
+    cap_add:
+      - NET_ADMIN
+    restart: on-failure
+    labels:
+      io.balena.features.dbus: 1
+  bluetooth-networking:
+    build: ./bluetooth-networking
